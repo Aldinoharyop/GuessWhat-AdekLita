@@ -19,61 +19,143 @@
         android:shadowDx="10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="1"
+            android:id="@+id/layoutAtas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageButton
-                android:id="@+id/fruit"
-                android:src="@drawable/cherry_correct"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"
-                android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            <TextView
-                android:textSize="24sp"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:shadowRadius="1"
-                android:shadowDx="5"
-                android:shadowDy="5"
-                android:shadowColor="@color/shadow_color"
-                android:text="@string/fruits"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageButton
-                android:id="@+id/animal"
-                android:src="@drawable/cow"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"
-                android:adjustViewBounds="true"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/fruit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cherry_correct" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="1"
+                    android:text="@string/fruits"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            <TextView
-                android:textSize="24sp"
-                android:textAlignment="center"
-                android:text="@string/animal"
-                android:shadowColor="@color/shadow_color"
-                android:shadowDy="5"
-                android:shadowDx="5"
-                android:shadowRadius="1"
-                android:textColor="@android:color/white"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/animal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cow" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="1"
+                    android:text="@string/animal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutAtas"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/fruit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cherry_correct" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="1"
+                    android:text="Huruf"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/animal2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cow" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="1"
+                    android:text="warna"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

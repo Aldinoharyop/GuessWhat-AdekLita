@@ -16,7 +16,7 @@ import static com.trydev.games.guesswhat.MainActivity.seek;
 
 public class CategoryActivity extends AppCompatActivity implements View.OnClickListener{
 
-    ImageButton fruit, animal;
+    ImageButton fruit, animal, fruit2, animal2;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -26,6 +26,8 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         fruit = (ImageButton) findViewById(R.id.fruit);
         animal = (ImageButton) findViewById(R.id.animal);
+        fruit2 = (ImageButton) findViewById(R.id.fruit2);
+        animal2 = (ImageButton) findViewById(R.id.animal2);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.bgm);
         mediaPlayer.setLooping(true);
