@@ -107,13 +107,13 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/fruit2"
+                    android:id="@+id/alphabet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/cherry_correct" />
+                    android:src="@drawable/alphabet" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -135,14 +135,14 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/animal2"
+                    android:id="@+id/color"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/cow" />
+                    android:src="@drawable/colorwheel" />
 
                 <TextView
                     android:layout_width="match_parent"

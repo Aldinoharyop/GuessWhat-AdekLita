@@ -16,7 +16,7 @@ import static com.trydev.games.guesswhat.MainActivity.seek;
 
 public class CategoryActivity extends AppCompatActivity implements View.OnClickListener{
 
-    ImageButton fruit, animal, fruit2, animal2;
+    ImageButton fruit, animal, alphabet, color;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -26,8 +26,8 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         fruit = (ImageButton) findViewById(R.id.fruit);
         animal = (ImageButton) findViewById(R.id.animal);
-        fruit2 = (ImageButton) findViewById(R.id.fruit2);
-        animal2 = (ImageButton) findViewById(R.id.animal2);
+        alphabet = (ImageButton) findViewById(R.id.alphabet);
+        color = (ImageButton) findViewById(R.id.color);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.bgm);
         mediaPlayer.setLooping(true);
@@ -35,6 +35,8 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         fruit.setOnClickListener(this);
         animal.setOnClickListener(this);
+        alphabet.setOnClickListener(this);
+        color.setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +48,12 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             case R.id.animal:
                 createAnimalQuest();
                 break;
+            case R.id.alphabet:
+                crateAlphabetQuest();
+                break;
+            case R.id.color:
+                crateColorQuest();
+                break;
         }
         Intent intent;
         intent = new Intent(getApplicationContext(), GameActivity.class);
@@ -53,6 +61,22 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         seek = mediaPlayer.getCurrentPosition();
         CategoryActivity.this.finish();
         startActivity(intent);
+    }
+
+    private void crateColorQuest() {
+        ArrayList<Quest> colorQuest = new ArrayList<>();
+        colorQuest.add(new Quest(R.drawable.error, "merah"));
+        colorQuest.add(new Quest(R.drawable.home, "putih"));
+        colorQuest.add(new Quest(R.drawable.love,"merah muda"));
+        colorQuest.add(new Quest(R.drawable.music, "oranye"));
+        colorQuest.add(new Quest(R.drawable.star,"kuning"));
+        colorQuest.add(new Quest(R.drawable.success,"hijau"));
+        colorQuest.add(new Quest(R.drawable.user,"ungu"));
+        colorQuest.add(new Quest(R.drawable.water_drop,"biru"));
+        GameActivity.myQuest = colorQuest;
+    }
+
+    private void crateAlphabetQuest() {
     }
 
     private void createAnimalQuest() {
