@@ -77,6 +77,8 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void crateAlphabetQuest() {
+        ArrayList<Quest> alphabetQuest = new ArrayList<>();
+        alphabetQuest.add(new Quest(R.drawable.water_drop, "a"));
     }
 
     private void createAnimalQuest() {

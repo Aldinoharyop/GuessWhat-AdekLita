@@ -48,7 +48,8 @@
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/cherry_correct" />
+                    android:src="@drawable/cherry_correct"
+                    android:onClick="onClick"/>
 
                 <TextView
                     android:layout_width="match_parent"

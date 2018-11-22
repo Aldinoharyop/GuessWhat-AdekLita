@@ -2,6 +2,7 @@ package com.trydev.games.guesswhat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
@@ -34,6 +35,7 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
     TextView result, chanceleft;
     int kesempatan, random, totalquestion;
     Quest quest;
+    MediaPlayer mediaPlayer;
 
     public static ArrayList<Quest> myQuest;
     public int totalanswer;
@@ -52,6 +54,10 @@ public class GameActivity extends AppCompatActivity implements View.OnTouchListe
         random = 0;
         totalanswer = 0;
         totalquestion = myQuest.size();
+
+//        mediaPlayer = MediaPlayer.create(this, R.raw.bgm);
+//        mediaPlayer.setLooping(true);
+//        mediaPlayer.start();
 
         setSoal(random());
 
