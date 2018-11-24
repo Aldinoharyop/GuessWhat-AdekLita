@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.doscom.weightapp.MenuActivity"
+    tools:context="com.trydev.games.guesswhat.MenuActivity"
     android:orientation="vertical"
     android:background="@drawable/background">
 
@@ -23,7 +23,7 @@
         android:text="Aplikasi Pendidikan Anak Usia Balita"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textStyle="bold" />
 
     <LinearLayout

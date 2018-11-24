@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.trydev.games.guesswhat.MainActivity"
+    tools:context="com.trydev.games.guesswhat.MenuBalitaActivity"
     android:background="@drawable/background"
     android:paddingBottom="16dp"
     >

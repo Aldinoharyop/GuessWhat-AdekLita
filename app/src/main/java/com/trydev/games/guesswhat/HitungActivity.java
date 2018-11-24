@@ -21,7 +21,7 @@ public class HitungActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hitung);
-        getSupportActionBar().setTitle("Hitung Berat Badan Ideal Balita");
+//        getSupportActionBar().setTitle("Hitung Berat Badan Ideal Balita");
         edtNama = (EditText)findViewById(R.id.edit_text_nama);
         edtBB = (EditText)findViewById(R.id.edit_text_bb);
         edtTB = (EditText)findViewById(R.id.edit_text_tb);
