@@ -50,6 +50,32 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ArticleActivity"
+            android:label="Article Balita"></activity>
+        <activity android:name=".MenuActivity"
+            android:label="Adek Lita"></activity>
+        <activity android:name=".MenuBalitaActivity"
+            android:label="Adek Lita"></activity>
+        <activity
+            android:name=".HitungActivity"
+            android:label="Hitung Berat Badan Ideal"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".HasilActivity"
+            android:label="Hasil BMI"
+            android:launchMode="singleTask"
+            android:parentActivityName=".HitungActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HitungActivity" />
+        </activity>
+
+
         <service
             android:name=".Service.MediaService"
             android:enabled="true"

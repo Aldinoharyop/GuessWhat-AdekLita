@@ -1,136 +1,57 @@
 package com.trydev.games.guesswhat;
 
-import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 
-import com.trydev.games.guesswhat.Service.MediaService;
+import java.io.IOException;
+import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
-    ImageButton start, instruction, exit;
-    MediaPlayer mediaPlayer;
-
-    public static int seek;
+public class MainActivity extends AppCompatActivity {
+    private ImageView Menu1, Menu2, MenuTentang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //getSupportActionBar().hide();
 
-        start = (ImageButton) findViewById(R.id.start);
-        instruction = (ImageButton) findViewById(R.id.instruction);
-        exit = (ImageButton) findViewById(R.id.exit);
+        Menu1 = (ImageView) findViewById(R.id.pgBalita);
+        Menu2 = (ImageView) findViewById(R.id.pgOrtu);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.bgm);
-        mediaPlayer.setLooping(true);
-        start();
+        AssetManager assetManager = this.getAssets();
+        InputStream is1= null;
+        InputStream is2= null;
 
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO
-                )!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.RECORD_AUDIO},200);
+        try {
+            is1 = assetManager.open("img/baby2.jpg");
+            is2 = assetManager.open("img/ortu1.png");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        start.setOnClickListener(this);
-        instruction.setOnClickListener(this);
-        exit.setOnClickListener(this);
+        Bitmap bitmap1 = BitmapFactory.decodeStream(is1);
+        Bitmap bitmap2 = BitmapFactory.decodeStream(is2);
+        Menu1.setImageBitmap(bitmap1);
+        Menu2.setImageBitmap(bitmap2);
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent;
-        switch (v.getId()){
-            case R.id.start:
-                intent = new Intent(MainActivity.this, CategoryActivity.class);
-                mediaPlayer.pause();
-                seek = mediaPlayer.getCurrentPosition();
-                startActivity(intent);
-                break;
-            case R.id.instruction:
-                intent = new Intent(MainActivity.this, InstructionActivity.class);
-                mediaPlayer.pause();
-                seek = mediaPlayer.getCurrentPosition();
-                startActivity(intent);
-                break;
-            case R.id.exit:
-                AlertDialog.Builder builder= new AlertDialog.Builder(this);
-                builder.setMessage(R.string.wanna_exit)
-                        .setCancelable(true)
-                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                mediaPlayer.stop();
-                                MainActivity.this.finish();
-                            }
-                        })
-                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.show();
-                break;
-        }
+    //cara kedua
+    public void pageBalita(View view) {
+        Intent hitungIntent = new Intent(MainActivity.this,MenuBalitaActivity.class);
+        startActivity(hitungIntent);
+
     }
 
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        builder.setMessage(R.string.wanna_exit)
-                .setCancelable(true)
-                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        mediaPlayer.stop();
-                        MainActivity.this.finish();
-                    }
-                })
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
+
+    public void pageOrtu(View view){
+        Intent i = new Intent(MainActivity.this, MenuActivity.class);
+        startActivity(i);
     }
 
-    @Override
-    protected void onDestroy() {
-        seek = 0;
-        mediaPlayer.release();
-        super.onDestroy();
-//        stopService(it);
-    }
 
-    @Override
-    protected void onStop() {
-        mediaPlayer.pause();
-        seek = mediaPlayer.getCurrentPosition();
-        super.onStop();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        start();
-    }
-
-    private void start(){
-        if (seek>0){
-            mediaPlayer.seekTo(seek);
-        }
-        mediaPlayer.start();
-    }
 }

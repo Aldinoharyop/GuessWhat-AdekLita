@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.trydev.games.guesswhat.Service.MediaService;
 
-import static com.trydev.games.guesswhat.MainActivity.seek;
+import static com.trydev.games.guesswhat.MenuBalitaActivity.seek;
 
 public class InstructionActivity extends AppCompatActivity {
 

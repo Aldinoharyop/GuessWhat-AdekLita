@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/idPic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/alita" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idTitle"
+        android:text="Title"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/idPic"/>
+
+    <TextView
+        android:id="@+id/idDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTitle"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/idPic"
+        android:text="Isi Article"
+        android:textSize="20sp" />
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.doscom.weightapp.MenuActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/image_view_icon"
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/alita" />
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="38dp"
+        android:text="Aplikasi Pendidikan Anak Usia Balita"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/menubmi"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:onClick="hitung" />
+
+        <ImageView
+            android:id="@+id/menubalita"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:onClick="goToBalita" />
+        <ImageView
+            android:id="@+id/menuortu"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:onClick="goToBalita" />
+
+
+    </LinearLayout>
+</LinearLayout>

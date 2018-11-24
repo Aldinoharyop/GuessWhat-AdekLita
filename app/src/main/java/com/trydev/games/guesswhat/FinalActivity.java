@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import static com.trydev.games.guesswhat.MainActivity.seek;
+import static com.trydev.games.guesswhat.MenuBalitaActivity.seek;
 
 public class FinalActivity extends AppCompatActivity implements View.OnClickListener{
 

@@ -12,7 +12,7 @@ import com.trydev.games.guesswhat.Service.MediaService;
 
 import java.util.ArrayList;
 
-import static com.trydev.games.guesswhat.MainActivity.seek;
+import static com.trydev.games.guesswhat.MenuBalitaActivity.seek;
 
 public class CategoryActivity extends AppCompatActivity implements View.OnClickListener{
 

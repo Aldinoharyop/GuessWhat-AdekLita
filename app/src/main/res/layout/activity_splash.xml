@@ -12,7 +12,7 @@
         android:maxWidth="300dp"
         android:adjustViewBounds="true"
         android:layout_centerInParent="true"
-        android:src="@drawable/logodbs"
+        android:src="@drawable/alita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>
