@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ArticleActivity extends AppCompatActivity {
+public class ArticleOrtuActivity extends AppCompatActivity {
 
     String [] titles={"Title 1","Title 2","Title 3","Title 4","Title 5"};
     String [] descriptions={"Description 1","Description 2","Description 3","Description 4","Description 5"};
@@ -30,24 +30,24 @@ public class ArticleActivity extends AppCompatActivity {
 
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
-        String[] daftarTitle = databaseAccess.getAllTitle();
-        List<String> daftarDeskripsi = databaseAccess.getAllDesc();
+        String[] daftarTitle = databaseAccess.getTitleOrtu();
+        String[] daftarDeskripsi = databaseAccess.getDescOrtu();
 
         databaseAccess.close();
 
-        MyAdapter adapter= new MyAdapter(this,daftarTitle,descriptions,images);
+        MyOrtuAdapter adapter= new MyOrtuAdapter(this,daftarTitle,daftarDeskripsi,images);
         lv.setAdapter(adapter);
     }
 
 
 }
 
-class MyAdapter extends ArrayAdapter{
+class MyOrtuAdapter extends ArrayAdapter{
 int[]imageArray;
 String [] titleArray;
 String[]descArray;
 
-public MyAdapter(Context context, String []titles1, String[] descriptions1, int[] img1){
+public MyOrtuAdapter(Context context, String []titles1, String[] descriptions1, int[] img1){
 super(context,R.layout.example_custlistview_row,R.id.idTitle,titles1);
 this.imageArray=img1;
 this.titleArray=titles1;

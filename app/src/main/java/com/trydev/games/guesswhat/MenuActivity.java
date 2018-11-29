@@ -64,7 +64,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
     public void goToBalita(View view){
-        Intent i = new Intent(MenuActivity.this, ArticleActivity.class);
+        Intent i = new Intent(MenuActivity.this, ArticleOrtuActivity.class);
         startActivity(i);
     }
 

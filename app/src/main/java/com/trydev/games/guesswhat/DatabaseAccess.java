@@ -40,9 +40,9 @@ public class DatabaseAccess {
         }
     }
 
-    public String[] getAllTitle(){
+    public String[] getTitleBalita(){
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM KamusJawa WHERE Indonesia!='' ORDER BY Indonesia ASC", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='1' ORDER BY `ID` ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             list.add(cursor.getString(4));
@@ -59,24 +59,69 @@ public class DatabaseAccess {
         return mStringArray;
     }
 
-    public List<String> getAllDesc(){
+    public String[] getDescBalita(){
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM KamusJawa WHERE Indonesia!='' ORDER BY Indonesia ASC", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='1' ORDER BY `ID` ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             list.add(cursor.getString(4));
             cursor.moveToNext();
         }
         cursor.close();
-        return list;
+
+        String[] mStringArray = new String[list.size()];
+        mStringArray =list.toArray(mStringArray);
+
+        for(int i = 0; i < mStringArray.length ; i++){
+            Log.d("",(String)mStringArray[i]);
+        }
+        return mStringArray;
+    }
+
+    public String[] getTitleOrtu(){
+        List<String> list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='2' ORDER BY `ID` ASC", null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            list.add(cursor.getString(4));
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+        String[] mStringArray = new String[list.size()];
+        mStringArray =list.toArray(mStringArray);
+
+        for(int i = 0; i < mStringArray.length ; i++){
+            Log.d("",(String)mStringArray[i]);
+        }
+        return mStringArray;
+    }
+
+    public String[] getDescOrtu(){
+        List<String> list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='2' ORDER BY `ID` ASC", null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            list.add(cursor.getString(4));
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+        String[] mStringArray = new String[list.size()];
+        mStringArray =list.toArray(mStringArray);
+
+        for(int i = 0; i < mStringArray.length ; i++){
+            Log.d("",(String)mStringArray[i]);
+        }
+        return mStringArray;
     }
 
     public List<String> getKamusJawa(){
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM KamusJawa", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            list.add(cursor.getString(1)+" (Ng) / "+cursor.getString(2)+" (Kr) / "+cursor.getString(3)+" (Ki)");
+            list.add(cursor.getString(1));
             cursor.moveToNext();
         }
         cursor.close();
@@ -85,7 +130,7 @@ public class DatabaseAccess {
 
     public List<String> getKamusIndonesia(){
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM KamusJawa WHERE Indonesia!='' ORDER BY Indonesia ASC", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Indonesia!='' ORDER BY Indonesia ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             list.add(cursor.getString(4));
@@ -97,7 +142,7 @@ public class DatabaseAccess {
 
     public List<String> getSearchJawa(String keyword){
         List<String> list = new ArrayList<>();
-        String queryString = "SELECT * FROM KamusJawa WHERE Ngoko LIKE '" + keyword +"%' ORDER BY Ngoko ASC";
+        String queryString = "SELECT * FROM ArticleAdeklita WHERE Ngoko LIKE '" + keyword +"%' ORDER BY Ngoko ASC";
         Cursor cursor = database.rawQuery(queryString, null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
@@ -110,7 +155,7 @@ public class DatabaseAccess {
 
     public List<String> getSearchIndonesia(String keyword){
         List<String> list = new ArrayList<>();
-        String queryString = "SELECT * FROM KamusJawa WHERE Indonesia LIKE '" + keyword +"%' ORDER BY Indonesia ASC";
+        String queryString = "SELECT * FROM ArticleAdeklita WHERE Indonesia LIKE '" + keyword +"%' ORDER BY Indonesia ASC";
         Cursor cursor = database.rawQuery(queryString, null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
@@ -122,7 +167,7 @@ public class DatabaseAccess {
     }
 
     public String getSelectedJawa(String kataJawa){
-        String queryString = "SELECT * FROM KamusJawa WHERE Ngoko='"+ kataJawa +"'";
+        String queryString = "SELECT * FROM ArticleAdeklita WHERE Ngoko='"+ kataJawa +"'";
         Cursor cursor = database.rawQuery(queryString, null);
         cursor.moveToFirst();
         String arti = cursor.getString(4);
@@ -131,7 +176,7 @@ public class DatabaseAccess {
     }
 
     public String getSelectedIndonesia(String kataIndonesia){
-        String queryString = "SELECT * FROM KamusJawa WHERE Indonesia='"+ kataIndonesia +"'";
+        String queryString = "SELECT * FROM ArticleAdeklita WHERE Indonesia='"+ kataIndonesia +"'";
         Cursor cursor = database.rawQuery(queryString, null);
         cursor.moveToFirst();
         String arti = cursor.getString(1) +" (Ng)/"+cursor.getString(2)+" (Kr)/"+cursor.getString(3)+" (Ki)";

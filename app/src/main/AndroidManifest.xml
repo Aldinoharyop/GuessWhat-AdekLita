@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ArticleActivity"
+        <activity android:name=".ArticleOrtuActivity"
             android:label="Article Balita"></activity>
         <activity android:name=".MenuActivity"
             android:label="Adek Lita"></activity>
