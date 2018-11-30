@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         InputStream is2= null;
 
         try {
-            is1 = assetManager.open("img/baby2.jpg");
+            is1 = assetManager.open("img/baby1.png");
             is2 = assetManager.open("img/ortu1.png");
         } catch (IOException e) {
             e.printStackTrace();

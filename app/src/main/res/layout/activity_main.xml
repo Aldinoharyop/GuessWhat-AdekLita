@@ -29,7 +29,7 @@
             android:layout_height="wrap_content">
             <ImageButton
                 android:id="@+id/pgBalita"
-                android:src="@drawable/baby2"
+                android:src="@drawable/baby1"
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
                 android:adjustViewBounds="true"
@@ -52,16 +52,17 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageButton
                 android:id="@+id/pgOrtu"
-                android:src="@drawable/ortu1"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"
-                android:adjustViewBounds="true"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="pageOrtu"/>
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:onClick="pageOrtu"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ortu1" />
             <TextView
                 android:textSize="24sp"
                 android:textAlignment="center"

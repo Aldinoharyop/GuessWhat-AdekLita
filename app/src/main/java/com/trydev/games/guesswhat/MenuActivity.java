@@ -33,9 +33,9 @@ public class MenuActivity extends AppCompatActivity {
         InputStream is3= null;
 
         try {
-            is1 = assetManager.open("img/bmi.png");
-            is2 = assetManager.open("img/balita.png");
-            is3 = assetManager.open("img/ortu.png");
+            is1 = assetManager.open("img/btnhitung.png");
+            is2 = assetManager.open("img/btnarticlebalita.png");
+            is3 = assetManager.open("img/btnarticleortu.png");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,9 +62,14 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    public void goToOrtu(View view){
+        Intent i = new Intent(MenuActivity.this, ArticleOrtuActivity.class);
+        startActivity(i);
+    }
+
 
     public void goToBalita(View view){
-        Intent i = new Intent(MenuActivity.this, ArticleOrtuActivity.class);
+        Intent i = new Intent(MenuActivity.this, ArticleBalitaActivity.class);
         startActivity(i);
     }
 
