@@ -39,7 +39,7 @@
     <TextView
         android:layout_below="@id/chance_left"
         android:layout_marginTop="16dp"
-        android:text="@string/static_question"
+        android:text="Apakah Ini ?"
         android:textSize="35sp"
         android:textAlignment="center"
         android:textColor="@android:color/white"

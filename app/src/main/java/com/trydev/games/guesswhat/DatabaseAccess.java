@@ -45,7 +45,7 @@ public class DatabaseAccess {
         Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='1' ORDER BY `ID` ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            list.add(cursor.getString(4));
+            list.add(cursor.getString(1));
             cursor.moveToNext();
         }
         cursor.close();
@@ -64,7 +64,7 @@ public class DatabaseAccess {
         Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='1' ORDER BY `ID` ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            list.add(cursor.getString(4));
+            list.add(cursor.getString(2));
             cursor.moveToNext();
         }
         cursor.close();
@@ -83,7 +83,7 @@ public class DatabaseAccess {
         Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='2' ORDER BY `ID` ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            list.add(cursor.getString(4));
+            list.add(cursor.getString(1));
             cursor.moveToNext();
         }
         cursor.close();
@@ -102,7 +102,7 @@ public class DatabaseAccess {
         Cursor cursor = database.rawQuery("SELECT * FROM ArticleAdeklita WHERE Jenis='2' ORDER BY `ID` ASC", null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            list.add(cursor.getString(4));
+            list.add(cursor.getString(2));
             cursor.moveToNext();
         }
         cursor.close();
